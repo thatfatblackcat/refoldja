@@ -1,0 +1,120 @@
+--- a/yomi.json	2022-02-12 20:30:00.000000000 +0100
++++ b/yomi.json	2022-02-12 20:30:00.000000000 +0100
+@@ -218 +218 @@
+-                "name": "Default",
++                "name": "Refold Japanese",
+@@ -226 +226 @@
+-                        "showAdvanced": false,
++                        "showAdvanced": true,
+@@ -236,2 +236,2 @@
+-                        "popupScalingFactor": 1,
+-                        "popupScaleRelativeToPageZoom": false,
++                        "popupScalingFactor": 1.5,
++                        "popupScaleRelativeToPageZoom": true,
+@@ -239 +239 @@
+-                        "showGuide": true,
++                        "showGuide": false,
+@@ -241 +241 @@
+-                        "glossaryLayoutMode": "default",
++                        "glossaryLayoutMode": "compact",
+@@ -243 +243 @@
+-                        "popupTheme": "default",
++                        "popupTheme": "dark",
+@@ -249,3 +249,3 @@
+-                        "showPitchAccentPositionNotation": true,
+-                        "showPitchAccentGraph": false,
+-                        "showIframePopupsInRootFrame": true,
++                        "showPitchAccentPositionNotation": false,
++                        "showPitchAccentGraph": true,
++                        "showIframePopupsInRootFrame": false,
+@@ -256,2 +256,2 @@
+-                        "popupActionBarVisibility": "auto",
+-                        "popupActionBarLocation": "top",
++                        "popupActionBarVisibility": "never",
++                        "popupActionBarLocation": "right",
+@@ -259 +259 @@
+-                        "termDisplayMode": "ruby",
++                        "termDisplayMode": "term-and-reading",
+@@ -288 +288 @@
+-                                "include": "shift",
++                                "include": "alt",
+@@ -341 +341 @@
+-                        "popupNestingMaxDepth": 0,
++                        "popupNestingMaxDepth": 20,
+@@ -357 +357,9 @@
+-                            "groups": []
++                            "groups": [
++                                [
++                                    {
++                                        "pattern": "(.)々",
++                                        "ignoreCase": false,
++                                        "replacement": "$1$1"
++                                    }
++                                ]
++                            ]
+@@ -369 +377 @@
+-                        "enable": false,
++                        "enable": true,
+@@ -371,3 +379 @@
+-                        "tags": [
+-                            "yomichan"
+-                        ],
++                        "tags": [],
+@@ -379,3 +385,15 @@
+-                            "deck": "",
+-                            "model": "",
+-                            "fields": {}
++                            "deck": "Refold Japanese",
++                            "model": "Sentence",
++                            "fields": {
++                                "ClozeEntire": "{sentence}",
++                                "ClozePrefix": "{cloze-prefix}",
++                                "ClozeCenter": "{cloze-body}",
++                                "ClozeSuffix": "{cloze-suffix}",
++                                "HelpImage": "{clipboard-image}",
++                                "HelpGraph": "{pitch-accent-graphs}",
++                                "HelpAudio": "{audio}",
++                                "HelpVoice": "",
++                                "Glossary": "{glossary-no-dictionary}",
++                                "Research": "{expression}",
++                                "Yomikata": "{reading}"
++                            }
+@@ -512 +530 @@
+-                                    "alt"
++                                    "shift"
+@@ -525 +543 @@
+-                                    "alt"
++                                    "shift"
+@@ -538 +556 @@
+-                                    "alt"
++                                    "shift"
+@@ -551 +569 @@
+-                                    "alt"
++                                    "shift"
+@@ -564 +582 @@
+-                                    "alt"
++                                    "shift"
+@@ -577 +595 @@
+-                                    "alt"
++                                    "shift"
+@@ -590 +608 @@
+-                                    "alt"
++                                    "shift"
+@@ -603 +621 @@
+-                                    "alt"
++                                    "shift"
+@@ -616 +634 @@
+-                                    "alt"
++                                    "shift"
+@@ -629 +647 @@
+-                                    "alt"
++                                    "shift"
+@@ -642 +660 @@
+-                                    "alt"
++                                    "shift"
+@@ -655 +673 @@
+-                                    "alt"
++                                    "shift"
+@@ -668 +686 @@
+-                                    "alt"
++                                    "shift"
