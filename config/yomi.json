@@ -1,0 +1,727 @@
+{
+    "version": 0,
+    "date": "2022-02-13 20:38:24",
+    "url": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/",
+    "manifest": {
+        "applications": {
+            "gecko": {
+                "id": "alex@foosoft.net",
+                "strict_max_version": null,
+                "strict_min_version": "57.0",
+                "update_url": null
+            }
+        },
+        "author": "Alex Yatskov",
+        "browser_specific_settings": {
+            "gecko": {
+                "id": "alex@foosoft.net",
+                "strict_max_version": null,
+                "strict_min_version": "57.0",
+                "update_url": null
+            }
+        },
+        "description": "Japanese dictionary with Anki integration",
+        "developer": null,
+        "homepage_url": null,
+        "install_origins": null,
+        "manifest_version": 2,
+        "name": "Yomichan",
+        "short_name": null,
+        "version": "21.10.31.1",
+        "background": {
+            "page": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/background.html",
+            "persistent": true
+        },
+        "content_scripts": [
+            {
+                "all_frames": true,
+                "css": null,
+                "exclude_globs": null,
+                "exclude_matches": null,
+                "include_globs": null,
+                "js": [
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/core.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/yomichan.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/frontend.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/popup.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/popup-factory.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/popup-proxy.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/popup-window.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/comm/api.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/comm/cross-frame-api.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/comm/frame-ancestry-handler.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/comm/frame-client.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/comm/frame-offset-forwarder.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/dom/dom-text-scanner.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/dom/document-util.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/dom/text-source-element.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/dom/text-source-range.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/input/hotkey-handler.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/language/text-scanner.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/script/dynamic-loader.js",
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/app/content-script-main.js"
+                ],
+                "match_about_blank": true,
+                "matches": [
+                    "http://*/*",
+                    "https://*/*",
+                    "file://*/*"
+                ],
+                "run_at": "document_idle"
+            },
+            {
+                "all_frames": true,
+                "css": null,
+                "exclude_globs": null,
+                "exclude_matches": null,
+                "include_globs": null,
+                "js": [
+                    "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/js/document-start.js"
+                ],
+                "match_about_blank": true,
+                "matches": [
+                    "http://docs.google.com/*",
+                    "https://docs.google.com/*"
+                ],
+                "run_at": "document_start"
+            }
+        ],
+        "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; img-src blob: 'self'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *",
+        "hidden": false,
+        "icons": {
+            "16": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon16.png",
+            "19": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon19.png",
+            "32": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon32.png",
+            "38": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon38.png",
+            "48": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon48.png",
+            "64": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon64.png",
+            "128": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon128.png"
+        },
+        "incognito": "spanning",
+        "minimum_chrome_version": "57.0.0.0",
+        "minimum_opera_version": null,
+        "optional_permissions": [
+            "clipboardRead"
+        ],
+        "options_ui": {
+            "browser_style": true,
+            "chrome_style": null,
+            "open_in_tab": true,
+            "page": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/settings.html"
+        },
+        "permissions": [
+            "<all_urls>",
+            "storage",
+            "clipboardWrite",
+            "unlimitedStorage",
+            "webRequest",
+            "webRequestBlocking",
+            "nativeMessaging"
+        ],
+        "web_accessible_resources": [
+            "popup.html"
+        ],
+        "browser_action": {
+            "browser_style": false,
+            "default_area": null,
+            "default_icon": {
+                "16": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon16.png",
+                "19": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon19.png",
+                "32": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon32.png",
+                "38": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon38.png",
+                "48": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon48.png",
+                "64": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon64.png",
+                "128": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/images/icon128.png"
+            },
+            "default_popup": "moz-extension://a2150545-e50a-451f-817b-8d42260171c9/action-popup.html",
+            "default_title": "Yomichan",
+            "theme_icons": null
+        },
+        "page_action": null,
+        "default_locale": null,
+        "l10n_resources": null,
+        "protocol_handlers": null,
+        "telemetry": null,
+        "chrome_settings_overrides": null,
+        "theme_experiment": null,
+        "user_scripts": null,
+        "commands": {
+            "toggleTextScanning": {
+                "description": "Toggle text scanning on/off",
+                "suggested_key": {
+                    "additionalProperties": null,
+                    "android": null,
+                    "chromeos": null,
+                    "default": "Alt+Delete",
+                    "ios": null,
+                    "linux": null,
+                    "mac": null,
+                    "windows": null
+                }
+            },
+            "openInfoPage": {
+                "description": "Open the info page",
+                "suggested_key": null
+            },
+            "openSettingsPage": {
+                "description": "Open the settings page",
+                "suggested_key": null
+            },
+            "openSearchPage": {
+                "description": "Open the search page",
+                "suggested_key": {
+                    "additionalProperties": null,
+                    "android": null,
+                    "chromeos": null,
+                    "default": "Alt+Insert",
+                    "ios": null,
+                    "linux": null,
+                    "mac": null,
+                    "windows": null
+                }
+            },
+            "openPopupWindow": {
+                "description": "Open the popup window",
+                "suggested_key": null
+            }
+        },
+        "devtools_page": null,
+        "omnibox": null,
+        "sidebar_action": null,
+        "experiment_apis": null,
+        "chrome_url_overrides": null
+    },
+    "environment": {
+        "browser": "firefox",
+        "platform": {
+            "os": "linux"
+        }
+    },
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0",
+    "permissions": {
+        "origins": [
+            "<all_urls>"
+        ],
+        "permissions": [
+            "storage",
+            "clipboardWrite",
+            "unlimitedStorage",
+            "webRequest",
+            "webRequestBlocking",
+            "nativeMessaging"
+        ]
+    },
+    "options": {
+        "version": 15,
+        "profiles": [
+            {
+                "name": "Refold Japanese",
+                "conditionGroups": [],
+                "options": {
+                    "general": {
+                        "enable": true,
+                        "resultOutputMode": "group",
+                        "debugInfo": false,
+                        "maxResults": 32,
+                        "showAdvanced": true,
+                        "popupDisplayMode": "default",
+                        "popupWidth": 400,
+                        "popupHeight": 250,
+                        "popupHorizontalOffset": 0,
+                        "popupVerticalOffset": 10,
+                        "popupHorizontalOffset2": 10,
+                        "popupVerticalOffset2": 0,
+                        "popupHorizontalTextPosition": "below",
+                        "popupVerticalTextPosition": "before",
+                        "popupScalingFactor": 1.5,
+                        "popupScaleRelativeToPageZoom": true,
+                        "popupScaleRelativeToVisualViewport": true,
+                        "showGuide": false,
+                        "compactTags": false,
+                        "glossaryLayoutMode": "compact",
+                        "mainDictionary": "",
+                        "popupTheme": "dark",
+                        "popupOuterTheme": "default",
+                        "customPopupCss": "",
+                        "customPopupOuterCss": "",
+                        "enableWanakana": true,
+                        "showPitchAccentDownstepNotation": true,
+                        "showPitchAccentPositionNotation": false,
+                        "showPitchAccentGraph": true,
+                        "showIframePopupsInRootFrame": false,
+                        "useSecurePopupFrameUrl": true,
+                        "usePopupShadowDom": true,
+                        "usePopupWindow": false,
+                        "popupCurrentIndicatorMode": "triangle",
+                        "popupActionBarVisibility": "never",
+                        "popupActionBarLocation": "right",
+                        "frequencyDisplayMode": "split-tags-grouped",
+                        "termDisplayMode": "term-and-reading",
+                        "sortFrequencyDictionary": null,
+                        "sortFrequencyDictionaryOrder": "descending"
+                    },
+                    "popupWindow": {
+                        "width": 400,
+                        "height": 250,
+                        "left": 0,
+                        "top": 0,
+                        "useLeft": false,
+                        "useTop": false,
+                        "windowType": "popup",
+                        "windowState": "normal"
+                    },
+                    "audio": {
+                        "enabled": true,
+                        "volume": 100,
+                        "autoPlay": false,
+                        "sources": [
+                            {
+                                "type": "jpod101",
+                                "url": "",
+                                "voice": ""
+                            }
+                        ]
+                    },
+                    "scanning": {
+                        "inputs": [
+                            {
+                                "include": "alt",
+                                "exclude": "mouse0",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": false
+                                }
+                            },
+                            {
+                                "include": "",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": false,
+                                    "touch": true,
+                                    "pen": true
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true
+                                }
+                            }
+                        ],
+                        "preventMiddleMouse": {
+                            "onWebPages": false,
+                            "onPopupPages": false,
+                            "onSearchPages": false,
+                            "onSearchQuery": false
+                        },
+                        "touchInputEnabled": true,
+                        "pointerEventsEnabled": false,
+                        "selectText": true,
+                        "alphanumeric": true,
+                        "autoHideResults": false,
+                        "delay": 20,
+                        "hideDelay": 0,
+                        "length": 16,
+                        "deepDomScan": false,
+                        "popupNestingMaxDepth": 20,
+                        "enablePopupSearch": false,
+                        "enableOnPopupExpressions": false,
+                        "enableOnSearchPage": true,
+                        "enableSearchTags": false,
+                        "layoutAwareScan": false
+                    },
+                    "translation": {
+                        "convertHalfWidthCharacters": "false",
+                        "convertNumericCharacters": "false",
+                        "convertAlphabeticCharacters": "false",
+                        "convertHiraganaToKatakana": "false",
+                        "convertKatakanaToHiragana": "variant",
+                        "collapseEmphaticSequences": "false",
+                        "textReplacements": {
+                            "searchOriginal": true,
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "(.)々",
+                                        "ignoreCase": false,
+                                        "replacement": "$1$1"
+                                    }
+                                ]
+                            ]
+                        }
+                    },
+                    "dictionaries": [],
+                    "parsing": {
+                        "enableScanningParser": true,
+                        "enableMecabParser": false,
+                        "selectedParser": null,
+                        "termSpacing": true,
+                        "readingMode": "hiragana"
+                    },
+                    "anki": {
+                        "enable": true,
+                        "server": "http://127.0.0.1:8765",
+                        "tags": [],
+                        "screenshot": {
+                            "format": "png",
+                            "quality": 92
+                        },
+                        "terms": {
+                            "deck": "Refold Japanese",
+                            "model": "Sentence",
+                            "fields": {
+                                "ClozeEntire": "{sentence}",
+                                "ClozePrefix": "{cloze-prefix}",
+                                "ClozeCenter": "{cloze-body}",
+                                "ClozeSuffix": "{cloze-suffix}",
+                                "HelpImage": "",
+                                "HelpGraph": "{pitch-accent-graphs}",
+                                "HelpAudio": "{audio}",
+                                "HelpVoice": "",
+                                "Glossary": "{glossary-no-dictionary}",
+                                "Research": "{expression}",
+                                "Yomikata": "{reading}"
+                            }
+                        },
+                        "kanji": {
+                            "deck": "",
+                            "model": "",
+                            "fields": {}
+                        },
+                        "duplicateScope": "collection",
+                        "duplicateScopeCheckAllModels": false,
+                        "checkForDuplicates": true,
+                        "fieldTemplates": null,
+                        "suspendNewCards": false,
+                        "displayTags": "never"
+                    },
+                    "sentenceParsing": {
+                        "scanExtent": 200,
+                        "terminationCharacterMode": "custom",
+                        "terminationCharacters": [
+                            {
+                                "enabled": true,
+                                "character1": "「",
+                                "character2": "」",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "『",
+                                "character2": "』",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "\"",
+                                "character2": "\"",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "'",
+                                "character2": "'",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": ".",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "!",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "?",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "．",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "。",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "！",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "？",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "…",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            }
+                        ]
+                    },
+                    "inputs": {
+                        "hotkeys": [
+                            {
+                                "action": "close",
+                                "argument": "",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "focusSearchBox",
+                                "argument": "",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "3",
+                                "key": "PageUp",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "3",
+                                "key": "PageDown",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "lastEntry",
+                                "argument": "",
+                                "key": "End",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "firstEntry",
+                                "argument": "",
+                                "key": "Home",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "1",
+                                "key": "ArrowUp",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "1",
+                                "key": "ArrowDown",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyBackward",
+                                "argument": "",
+                                "key": "KeyB",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyForward",
+                                "argument": "",
+                                "key": "KeyF",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteKanji",
+                                "argument": "",
+                                "key": "KeyK",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKanji",
+                                "argument": "",
+                                "key": "KeyE",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKana",
+                                "argument": "",
+                                "key": "KeyR",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "playAudio",
+                                "argument": "",
+                                "key": "KeyP",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "viewNote",
+                                "argument": "",
+                                "key": "KeyV",
+                                "modifiers": [
+                                    "shift"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "copyHostSelection",
+                                "argument": "",
+                                "key": "KeyC",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            }
+                        ]
+                    },
+                    "clipboard": {
+                        "enableBackgroundMonitor": false,
+                        "enableSearchPageMonitor": false,
+                        "autoSearchContent": true,
+                        "maximumSearchLength": 1000
+                    },
+                    "accessibility": {
+                        "forceGoogleDocsHtmlRendering": false
+                    }
+                }
+            }
+        ],
+        "profileCurrent": 0,
+        "global": {
+            "database": {
+                "prefixWildcardsSupported": false
+            }
+        }
+    }
+}

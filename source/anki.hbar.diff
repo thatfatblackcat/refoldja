@@ -1,0 +1,50 @@
+--- a/anki.hbar	2022-02-12 20:30:00.000000000 +0100
++++ b/anki.hbar	2022-02-12 20:30:00.000000000 +0100
+@@ -100,21 +100,13 @@
+ {{~#*inline "glossary"~}}
+-    <div style="text-align: left;">
+     {{~#scope~}}
+         {{~#if (op "===" definition.type "term")~}}
+             {{~> glossary-single definition brief=brief noDictionaryTag=noDictionaryTag ~}}
+         {{~else if (op "||" (op "===" definition.type "termGrouped") (op "===" definition.type "termMerged"))~}}
+-            {{~#if (op ">" definition.definitions.length 1)~}}
+-                <ol>{{~#each definition.definitions~}}<li>{{~> glossary-single . brief=../brief noDictionaryTag=../noDictionaryTag ~}}</li>{{~/each~}}</ol>
+-            {{~else~}}
+-                {{~#each definition.definitions~}}{{~> glossary-single . brief=../brief noDictionaryTag=../noDictionaryTag ~}}{{~/each~}}
+-            {{~/if~}}
++            {{~#each definition.definitions~}}
++                {{#each glossary}}{{#formatGlossary ../dictionary}}{{{.}}}{{/formatGlossary}}{{#unless @last}} ｜ {{/unless}}{{/each}}
++            {{~/each~}}
+         {{~else if (op "===" definition.type "kanji")~}}
+-            {{~#if (op ">" definition.glossary.length 1)~}}
+-                <ol>{{#each definition.glossary}}<li>{{.}}</li>{{/each}}</ol>
+-            {{~else~}}
+-                {{~#each definition.glossary~}}{{.}}{{~/each~}}
+-            {{~/if~}}
++            {{~#each definition.glossary~}}{{.}}{{~/each~}}
+         {{~/if~}}
+     {{~/scope~}}
+-    </div>
+ {{~/inline~}}
+@@ -202,16 +194,9 @@
+ {{#*inline "pitch-accent-list"}}
+-    {{~#if (op ">" pitchCount 0)~}}
+-        {{~#if (op ">" pitchCount 1)~}}<ol>{{~/if~}}
++    {{~#each pitches~}}
+         {{~#each pitches~}}
+-            {{~#each pitches~}}
+-                {{~#if (op ">" ../../pitchCount 1)~}}<li>{{~/if~}}
+-                    {{~> pitch-accent-item-disambiguation~}}
+-                    {{~> pitch-accent-item format=../../format~}}
+-                {{~#if (op ">" ../../pitchCount 1)~}}</li>{{~/if~}}
+-            {{~/each~}}
++            {{~> pitch-accent-item-disambiguation~}}
++            {{~> pitch-accent-item format=../../format~}}
++            {{#unless @last}} ｜ {{/unless}}
+         {{~/each~}}
+-        {{~#if (op ">" pitchCount 1)~}}</ol>{{~/if~}}
+-    {{~else~}}
+-        No pitch accent data
+-    {{~/if~}}
++    {{~/each~}}
+ {{/inline}}
